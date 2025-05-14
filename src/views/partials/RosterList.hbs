@@ -1,0 +1,28 @@
+<Card title="Rosters to date">
+  <table class="table is-fullwidth">
+    <thead>
+      <th>Hour</th>
+      <th>Profession</th>
+      <th>Agency</th>
+      <th>Staff</th>
+    </thead>
+    <tbody>
+      {{#each rosters}}
+      <tr>
+        <td>
+          {{hour}}
+        </td>
+        <td>
+          {{profession}}
+        </td>
+        <td>
+          {{agency.code}}, {{agency.agencyName}}
+        </td>
+        <td>
+          {{staff}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</Card>

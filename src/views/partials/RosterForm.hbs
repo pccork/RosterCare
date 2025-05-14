@@ -1,0 +1,35 @@
+<form action="/roster" method="POST">
+  <div class="field">
+    <label class="label">Enter working hours</label>
+    <input class="input" type="number" placeholder="Hours" name="hour" value="1" />
+  </div>
+  <div>
+    <div class=" box field is-horizontal">
+      <div class="field-body ml-6">
+        <div class="control is-expanded mt-2">
+          <input class=" radio" type="radio" name="profession" value="nurse" />
+          Nurse
+          <input class="radio" type="radio" name="profession" value="doctor" />
+          Doctor
+        </div>
+      </div>
+      <div class="field-body">
+        <div class="select">
+          <select name="agency">
+            {{#each agencies}}
+            <option value={{_id}}> {{code}},{{AgencyName}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="field mt-2">
+    {{> Coordinates}}
+  </div>
+  <div class="field">
+    <div class="control">
+      <button class="button is-success is-fullwidth">Roster</button>
+    </div>
+  </div>
+</form>
