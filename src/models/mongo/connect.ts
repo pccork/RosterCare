@@ -10,6 +10,7 @@ import { Db } from "../../types/roster-types.js";
 
 const seedLib = mongooseSeeder.default;
 
+
 async function seed() {
   const seeder = seedLib(Mongoose);
   const dbData = await seeder.seed(seedData, { dropDatabase: false, dropCollections: true });

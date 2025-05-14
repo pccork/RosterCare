@@ -1,5 +1,6 @@
 export const seedData = {
     users: {
+      _model: "User",
       homer: {
         firstName: "Homer",
         lastName: "Simpson",
