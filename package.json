@@ -4,12 +4,18 @@
   "description": "",
   "main": "src/server.js",
   "type": "module",
+
+
   "scripts": {
     "build": "tsc",
     "dev:tsc": "tsc --watch",
     "start": "npm run build && node src/server.js ",
     "dev": "./node_modules/.bin/nodemon src/server.js  --ignore 'src/models/json/*.json'",
     "lint": "./node_modules/.bin/eslint . --ext .js"
+  },
+
+  "engines": {
+    "node": "18.x"
   },
   
   "author": "",
