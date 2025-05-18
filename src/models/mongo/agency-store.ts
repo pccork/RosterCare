@@ -14,8 +14,9 @@ export const agencyStore = {
 
   async findBy(code: string, AgencyName: string): Promise<Agency | null> {
     const agency = await AgencyMongoose.findOne({
-      code,
       AgencyName,
+      code,
+      
     }).lean();
     return agency;
   },
