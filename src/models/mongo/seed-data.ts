@@ -25,17 +25,17 @@ export const seedData = {
     agencies: {
       _model: "Agency",
       clinistaff: {
-        AgencyName: "Clinistaff",
+        agencyName: "Clinistaff",
         code: "DOC-T-1",
         office: "MediAgency",
       },
       allcare: {
-        AgencyName: "AllCare",
+        agencyName: "AllCare",
         code: "NUR-F-1",
         office: "NurseAgency",
       },
       nurseLink: {
-        AgencyName: "NurseLink",
+        agencyName: "NurseLink",
         code: "NUR-T-1",
         office: "NurseAgency",
       },
