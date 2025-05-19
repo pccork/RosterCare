@@ -18,9 +18,10 @@ function importEnvs() {
     const result = dotenv.config();
     if (result.error) {
         console.log(result.error.message);
-        process.exit(1);
+        //process.exit(1);
     }
 }
+importEnvs();
 async function initPlugins(server) {
     await server.register(Inert);
     await server.register(Vision);

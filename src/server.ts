@@ -17,13 +17,15 @@ import * as HapiAuthJwt2 from "hapi-auth-jwt2";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+
 function importEnvs() {
   const result = dotenv.config();
   if (result.error) {
     console.log(result.error.message);
-    process.exit(1);
+    //process.exit(1);
   }
 }
+importEnvs();
 
 async function initPlugins(server: Server) {
   await server.register(Inert);
