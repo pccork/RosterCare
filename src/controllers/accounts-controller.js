@@ -1,4 +1,5 @@
 import { db } from "../models/db.js";
+import bcrypt from 'bcrypt';
 export const accountsController = {
     index: {
         auth: false,
@@ -31,7 +32,11 @@ export const accountsController = {
         handler: async function (request, h) {
             const { email, password } = request.payload;
             const user = await db.userStore.findBy(email);
-            if (!user || user.password !== password) {
+            if (!user) {
+                return h.redirect("/");
+            }
+            const passwordMatch = await bcrypt.compare(password, user.password);
+            if (!passwordMatch) {
                 return h.redirect("/");
             }
             request.cookieAuth.set({ id: user._id });

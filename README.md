@@ -36,10 +36,10 @@ All roster data is stored securely in the database via the server API.
 
 | Layer      | Stack                      |
 |------------|----------------------------|
-| Frontend   | Svelte, TypeScript, Netlify |
+| Frontend   | Svelte, TypeScript, Netlify|
 | Backend    | Node.js, Express, Glitch   |
 | Auth       | JWT                        |
-| Database   | (Insert DB info here)      |
+| Database   |https://cloud.mongodb.com   |
 
 ---
 

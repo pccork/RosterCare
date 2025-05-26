@@ -1,5 +1,6 @@
 import { Request, ResponseToolkit } from "@hapi/hapi";
 import { db } from "../models/db.js";
+import bcrypt from 'bcrypt';
 
 export const accountsController = {
   index: {
@@ -29,18 +30,27 @@ export const accountsController = {
       return h.view("Login", { title: "Login to RosterCare" });
     },
   },
+
   login: {
-    auth: false,
-    handler: async function (request: Request, h: ResponseToolkit) {
-      const { email, password } = request.payload as any;
-      const user = await db.userStore.findBy(email);
-      if (!user || user.password !== password) {
-        return h.redirect("/");
-      }
-      request.cookieAuth.set({ id: user._id });
-      return h.redirect("/roster");
+  auth: false,
+  handler: async function (request: Request, h: ResponseToolkit) {
+    const { email, password } = request.payload as any;
+
+    const user = await db.userStore.findBy(email);
+    if (!user) {
+      return h.redirect("/");
+    }
+
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if (!passwordMatch) {
+      return h.redirect("/");
+    }
+
+    request.cookieAuth.set({ id: user._id });
+    return h.redirect("/roster");
     },
   },
+
   logout: {
     handler: async function (request: Request, h: ResponseToolkit) {
       request.cookieAuth.clear();
