@@ -12,7 +12,7 @@
     "lint": "./node_modules/.bin/eslint . --ext .js"
   },
   "engines": {
-    "node": ">=16"
+    "node": "18.x"
   },
   "author": "",
   "license": "ISC",
