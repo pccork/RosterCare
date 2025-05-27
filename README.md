@@ -4,8 +4,10 @@ RosterCare is a web application designed to manage and log roster hours for heal
 
 ## Project Structure
 
-- **Backend**: `RosterCareAPIserver` — Hosted on Glitch
+- **Backend**: `RosterCare` — Hosted on Render
 - **Frontend**: `RosterSvelteShell` — Built with Svelte and TypeScript, hosted on Netlify
+- **Frontend-SSR**: `roster-seelte-ssr` — Built with Svelte and TypeScript and serverside rendering hosted on Netlify
+
 
 ---
 
@@ -60,13 +62,15 @@ All roster data is stored securely in the database via the server API.
 1. Clone the repo:
    ```bash
    git clone 
-2. Go to [Netify](https://rostersvelteshell.netlify.app/) 
+2. Go to [Netify](https://rostersvelteshell.netlify.app/)
+3. Go to (SSR) [Netify](https://app.netlify.com/projects/rostersveltessr)
+
    
    
 ### Further work
 1. Setting an admin credential and change the API to only allow administrator to has access to the summary tables and chats with all users
 2. Users could only see their own information
-3. Setting up Server Side Rendering and Full Stack Development
+3. Fix iisue in Server Side Rendering version and develop full stack version based on Sevlte kit only
 
 ### Acknowledgment
 This project is based on the repositories of my lecture Eamonn de Leaster
